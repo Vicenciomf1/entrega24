@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos2.css">
+    <script src="https://kit.fontawesome.com/2b319bd690.js" crossorigin="anonymous"></script>
+    <title>WebSupport</title>
+</head>
+<body>
+    <!-- En esta parte va el header, con su título y su barra de navegación. -->
+    <header class="contacto">
+        <!-- Acá va la barra de navegación como lista desordenada, los que tienen enlaces relativos son el de inicio, el de clientes y el de contacto. Los que tienen enlaces internos son los de sobre nosotros; y los servicios y su menú desplegable -->
+        <nav class="header__nav">
+            <!-- Logo, le hago un div para que no se seleccione toda su área como pointer en el mouse -->
+            <div class="header__chico">
+                <div class="header__nav--foto">
+                    <a href="../index.html"><img class="logo" src="../assets/img/logo.png" alt="Logo"></a>
+                </div>
+                <!-- Fin del logo -->
+                <div id="iconoMobile">
+                    <i class="fa-solid fa-bars fa-xl"></i>
+                </div>
+            </div>
+            <div class="header__nav--ulFlexContenedor jsMenu">
+                <ul class="header__nav--ulFlex">
+                    <li><a class= "header__nav--link" href="../index.html">Home</a></li>
+                    <li><a class= "header__nav--link" onclick="window.location.href = '../index.html#nosotros'; recogerMenu()" href="../index.html#nosotros">Sobre nosotros</a></li>
+                    <li><a class= "header__nav--link" onclick="window.location.href = '../index.html#desarrollo'; recogerMenu()" href="../index.html#desarrollo">Desarrollo Web</a></li>
+                    <li><a class= "header__nav--link" onclick="window.location.href = '../index.html#camarasIp'; recogerMenu()" href="../index.html#camarasIp">Cámaras</a></li>
+                    <li><a class= "header__nav--link" onclick="window.location.href = '../index.html#gps'; recogerMenu()" href="../index.html#gps">GPS</a></li>
+                    <li><a class= "header__nav--link" href="../index.html#soporteTi">Soporte TI</a></li>
+                    <li><a class= "header__nav--link" href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Fin de la barra de navegación -->
+        <!-- Acá va el hero -->
+        <section class="hero">
+            <article class="hero__texto">
+                <h1 class="hero__texto--titulo">Websupport</h1>
+                <h1 class="hero__texto--titulo">Servicios</h1>
+                <h1 class="hero__texto--titulo">Tecnológicos</h1>
+            </article>
+            <img class="heroFoto" src="../assets/img/hero.png" alt="Imagen de Servicio Técnico">
+        </section>
+        <!-- Fin del hero -->
+    </header>
+    <!-- Cierre del header -->
+    <!-- Acá va la información de mi página -->
+    <main class="contacto"> <!-- En el main puse una clase para dividir en dos las columnas: el formulario y el otras maneras de contatarnos-->
+        <section class="formulario"> <!-- En esta sección incluyo tanto el formulario como su introducción -->
+            <article class="formulario--flex"> <!-- En este artículo incluyo a todo el formulario -->
+                <h1>Contáctanos!</h1>
+                <p>Estaremos felices de escucharte! <br> Tan solo rellena los siguientes datos solicitados: </p>
+                <form action="" method="get" enctype="text/plain">
+                    <fieldset> <!-- En esta parte del formulario pido la información personal de contacto -->
+                        <legend>Información personal</legend>
+                        <div>
+                            <label for="Nombre">Nombres (Obligatorio): </label>
+                            <input type="text" name="nombres" id="Nombre" required>
+                        </div>
+                        <div>
+                            <label for="apellido">Apellidos (Obligatorio): </label>
+                            <input type="text" name="apellidos" id="apellido" required>
+                        </div>
+                        <div>
+                            <label for="correo">Correo (Obligatorio): </label>
+                            <input type="email" name="correo" id="correo" required>
+                        </div>
+                        <div>
+                            <label for="celular">Número telefónico: </label>
+                            <input type="tel" name="numero" id="celular">
+                        </div>
+                    </fieldset>
+                    <!-- Fin de petición de información personal de contacto -->
+                    <fieldset> <!-- En esta parte del formulario pido la información acerca del motivo de contacto -->
+                        <legend>Tema</legend>
+                        <div>
+                            <label for="asunto">Asunto (Obligatorio)</label>
+                            <select name="Asunto" id="asunto" required>
+                                <option value="" disabled selected>--Elige el asunto--</option>
+                                <option value="web">Desarrollo Web</option>
+                                <option value="camaras">Seguridad IP</option>
+                                <option value="gps">Soluciones GPS</option>
+                                <option value="soporte">Soporte TI</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="Contenido"></label>
+                            <textarea name="detalles" id="Contenido" cols="30" rows="10" required placeholder="Ingresa los detalles*: "></textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="Enviar">
+                        </div>
+                    </fieldset> <!-- Fin de petición acerca del motivo de contacto -->
+                </form>
+            </article>
+            <!-- Fin del formulario -->
+        </section> <!-- En esta sección (sé que tuve que usar una grid, pero aquí recién empezaban a pedir Box Model, y quería manejarme bien en BModel y Flex antes de pasar a lo más moderno), que es la segunda columna, meto todo dentro de esta sección para hacer cuatro filas (una columna, al opuesto que lo que hice con el main que eran dos columnas y una fila) -->
+        <section class="encuentranos">
+            <!-- Comienzo de primera fila de título -->
+            <h1>Otras formas de encontrarnos: </h1>
+            <!-- Fin de primera fila de título -->
+            <!-- Comienzo de segunda fila de dos columnas, reciclo la clase doble columna para poner los estilos que se repiten: Un ícono, su catacterística y su descripción -->
+            <div class="encuentranos__info">
+                <!-- En esta primera fila de esta primera columna describo la ubicación de la tienda-->
+                <div id="celu" class="encuentranos__dobleColumna--iconoYtexto">
+                    <img id="celularIcono" src="../assets/svg/celular.svg" alt="Imagen de celular">
+                    <h4>Por teléfono: </h4>
+                    <a href="tel:912345678">+56912345678</a>
+                </div>
+                <!-- Fin de primera fila -->
+                <!-- En esta segunda fila de esta primera columna describo la ubicación de la tienda-->
+                <div id="mail" class="encuentranos__dobleColumna--iconoYtexto">
+                    <img id="correoIcono" src="../assets/svg/correo.svg" alt="Imagen de pin de sobre de correo">
+                    <h4>Correo: </h4>
+                    <a href="mailto:contacto@websupport.cl">contacto@websupport.cl</a>
+                </div>
+                <!-- Fin de segunda fila -->
+                </article>
+                <!-- Fin de segunda fila de dos columnas -->
+                <!-- Comienzo de tercera fila de dos columnas, es la segunda vez que ocupo este layout -->
+                <!-- En esta primera fila de esta segunda columna de este tipo, describo la ubicación de la tienda-->
+                <div id="horario" class="encuentranos__dobleColumna--iconoYtexto">
+                    <img id="horarioIcono" src="../assets/svg/horario.svg" alt="Imagen de reloj">
+                    <h4 id="horarioTitulo">Horario: </h4>
+                    <p id="horarioTexto">Lunes a Viernes: 9:00-19:00 Sábados: <br> 10:00-17:00</p>
+                </div>
+                <!-- Fin de primera fila -->
+                <!-- En esta segunda fila de esta segunda columna describo la ubicación de la tienda-->
+                <div id="ubi" class="encuentranos__dobleColumna--iconoYtexto">
+                    <img id="pinIcono" src="../assets/svg/lugar.svg" alt="Imagen de pin de ubicación">
+                    <h4>Dirección: </h4>
+                    <p>Providencia</p>
+                </div>
+                <!-- Fin de segunda fila -->
+                </article>
+                <!-- Fin de tercera fila de dos columnas -->
+            </div>
+            <!-- Finalmente, en la cuarta fila, remato (jaja, estoy cansado) con una sección de un mapa de tipo iframe -->
+            <article class="encuentranos__ubicacion">
+                <h1 class="encuentranos__ubicacion--titulo">Mapa: </h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26638.962118536874!2d-70.60924984999998!3d-33.42662655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf7c6e8366f7%3A0x87effcc00a478d7c!2sProvidencia%2C%20Santiago%20Metropolitan%20Region!5e0!3m2!1sen!2scl!4v1652419431588!5m2!1sen!2scl" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </article>
+            <!-- Fin del iframe -->
+        </section>
+        <!-- Fin de sección del formulario -->
+    </main>
+    <!-- Fin de la información de mi página -->
+    <!-- Comienzo del footer -->
+    <footer>
+        <!-- Comienzo de sección del logo, título y descripción -->
+        <section class="footer__columna">
+            <a href="../index.html"><img id="logo" src="../assets/img/logo.png" alt="Logo"></a>
+            <h1 class="footer__columna--titulo">WebSupport</h1>
+            <p class="footer__columna--texto">Aprendido en CoderHouse, tengo ganas de dormir:)</p>
+            <img class="footer__columna--imagen" src="../assets/img/mercadoPublico.png" alt="Imagen de asociación con Gobierno">
+        </section>
+        <!-- Fin de sección del logo, título y descripción -->
+        <!-- Comienzo de sección de links de interés -->
+        <section class="footer__columna">
+            <h1 class="footer__columna--titulo">Links de Interés</h1>
+            <ul class="footer__columna--lista">
+                <li><a class= "footer__columna--link" href="#">Contacto</a></li>
+			</ul>
+        </section>
+        <!-- Fin de sección de links de interés -->
+    </footer>
+    <!-- Fin del footer -->
+    <script src="../js/logica.js"></script>
+</body>
+</html>

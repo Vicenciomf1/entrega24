@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Importo la tipografia Raleway, si no pesca esa, usare sans-seriff en las familias tipograficas, las tipografias seran Raleway Extrabold 800 para el titulo del hero, Raleway medium 500 para titulos, y Raleway normal 400 para el texto de parrafos */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;800&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    display: grid;
+    grid-template-rows: 110vh auto 45vh;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+}
+
+header {
+    overflow: hidden;
+    background-image: url("../assets/img/fondoHero.jpg");
+    grid-area: header;
+    display: grid;
+    grid-template-rows: 3fr 7fr;
+    grid-template-areas: 
+        "barra"
+        "hero"
+    ;
+}
+
+/* Sección pesada del Header responsive mobile first */
+
+/* Parte del logo y la barra */
+
+.header__chico {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.header__nav--foto {
+    flex: 3;
+}
+
+.iconoMobile {
+    flex: 1;
+}
+
+.header__nav--foto img {
+    width: 100%;
+}
+
+
+#iconoMobile {
+    margin: 40px 50px;
+    position: relative;
+    z-index: 5;
+    --fa-inverse: #1da1f2;
+    --fa-animation-iteration-count: 0.5;
+    --fa-animation-duration: 1.2s;
+}
+
+#iconoMobile i {
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.header__nav--ulFlexContenedor {
+    width: 300px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.7s ease;
+    background-color: #003B4A;
+    z-index: 3;
+}
+
+.header__nav--ulFlex {
+    padding: 100px 0px 20px 0px;
+    list-style: none;
+}
+
+.header__nav--ulFlex li a {
+    color: white;
+    display: block;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 10px 50px;
+}
+
+.header__nav--ulFlex li a:hover {
+    color: black;
+}
+
+.jsMenu {
+    transform: translate(-600px);
+}
+/* Este es un recordatorio para animar cada li para la segunda preentrega, en orden de arriba para abajo */
+
+.jsOpacidadFondo {
+    background-color: rgba(0,0,0,0.5);
+    transition: all 0.7s ease;
+}
+
+nav.header__nav {
+    grid-area: barra;
+    position: relative;
+}
+
+/* Parte del Hero */
+
+section.hero {
+    grid-area: hero;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__texto--titulo {
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 2em;
+}
+
+
+.heroFoto {
+    width: 80%;
+    position: relative;
+    left: 5%;
+    margin-top: 2rem;
+    z-index: 1;
+} 
+
+/* Fin del hero y del header */
+
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+    "nosotros"
+    "web"
+    "ip"
+    "gps"
+    "ti"
+    "seguridad"
+    ;
+    row-gap: 5vh;
+}
+
+main>* {
+    padding: 8vh 3vw;
+}
+
+/* En esta parte hago el flexbox común, ojo con el responsive */
+
+.servicios {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicios__textos {
+    padding: 5px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicios__foto--contenedor {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.servicios__foto--contenido {
+    height: 90%;
+    width: 90%;
+}
+
+article.servicios__textos * {
+    padding: 1vh 0px;
+}
+
+/* Fin del flexbox común */
+
+
+/* En esta parte edito cada sección en específico por ID */
+
+#nosotros {
+    grid-area: nosotros;
+}
+
+.nosotros__textos * {
+    margin: 7vh 0px;
+}
+
+.nosotros__textos--titulo {
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 42px;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+.nosotros__textos--descripcion {
+    text-align: center;
+}
+
+#desarrollo {
+    grid-area: web;
+    background-color: #6980A22B;
+}
+
+#camarasIp {
+    grid-area: ip;
+}
+
+#gps {
+    grid-area: gps;
+    background-color: #6980A22B;
+}
+
+#soporteTi {
+    grid-area: ti;
+}
+
+#seguridad {
+    grid-area: seguridad;
+    background-color: #6980A22B;
+    padding-top: 10vh;
+}
+
+
+/* Fin de edición de servicios por ID */
+
+/* Edición de seguridad */
+
+.seguridad__flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 6vh 6vw;
+    padding: 3vh 3vw;
+    gap: 8vh;
+}
+.seguridad__subtitulo {
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+.seguridad__titulo {
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 42px;
+}
+
+.seguridad__flex--columna {
+    padding: 5vh 3vw;
+    flex: 0 0 28%;
+    border: 1px solid;
+    border-radius: 15px;
+    background-color: #f8f9fa;
+}
+
+.seguridad__flex--texto {
+    margin-top: 10%;
+    font-size: 14px;
+    text-align: center;
+}
+
+.seguridad__flex--titulo {
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+.seguridad__flex--columnaImagen {
+    transform: scale(0.5,0.5);
+    padding: 20px
+}
+
+/* Fin de edición de seguridad */
+
+/* Aquí edito el footer */
+
+footer {
+    grid-area: footer;
+    height: 45vh;
+    padding: 35vh 20px;
+    background-color: #1796e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 3rem;
+}
+
+footer>* {
+    margin: 1.5rem 0rem;
+}
+
+footer section a {
+    margin: 14px 0px;
+}
+
+.footer__columna {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.footer__columna--titulo {
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.842);
+    font-size: 30px;
+}
+
+.footer__columna--texto {
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.footer__columna--imagen {
+    width: 40%;
+    height: 40%;
+    position: relative;
+    left: 12vw;
+}
+
+.footer__columna--lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul.footer__columna--lista li {
+    list-style: none;
+}
+
+section.footer__columna a {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__columna--link {
+    padding: 14px 20px;
+    display: block;
+    color: black;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Fin de edición del footer */
+/* Acá edito a mi página de contacto */
+
+header.contacto {
+    height: 160vh;
+    overflow: hidden;
+}
+
+main.contacto {
+    overflow: hidden;
+    background-color: #6980A22B;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40vh;
+}
+
+.formulario {
+    padding: 30px;
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario--flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario--flex * {
+    text-align: center;
+    margin: 0.4vh 0px;
+    padding: 0.4vh 1vw;
+}
+
+.encuentranos {
+    width: 100%;
+    padding: 30px;
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.encuentranos__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+}
+
+#celu {
+    grid-area: 1/1/1/2;
+}
+
+#mail {
+    grid-area: 1/2/1/3;
+}
+
+#horario {
+    grid-area: 2/1/2/2;
+}
+
+#ubi {
+    grid-area: 2/2/2/3;
+}
+
+.encuentranos__dobleColumna--iconoYtexto {
+    padding: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.encuentranos__dobleColumna--iconoYtexto * {
+    padding: 10px;
+    width: 100%;
+}
+
+#celularIcono {
+    size: inherit;
+}
+
+#correoIcono {
+    size: inherit;
+}
+
+#horarioIcono {
+    size: inherit;
+}
+
+#pinIcono {
+    size: inherit;
+}
+
+
+.encuentranos__ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.encuentranos__ubicacion--titulo {
+    text-align: center;
+}
+
+.formulario--flex * {
+    text-align: center;
+    margin: 0.4vh 0px;
+    padding: 0.4vh 1vw;
+}
+/*Fin de página de contacto */
+
+/* Tablet*/
+@media only screen and (min-width:481px) and (max-width: 1400px) {
+    header .logo {
+        transform: scale(0.5,0.5);
+        position: relative;
+        top: -20%;
+        right: 1%;
+    }
+}
+/* PC  */
+@media only screen and (min-width:1401px){
+
+    /* Adaptacion del header */
+
+    /* Parte del logo y la barra */
+    #iconoMobile {
+        display: none;
+    }
+    .header__nav {
+        height: 150px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        justify-items: center;
+    }
+    .jsMenu {
+        transform: none;
+    }
+    .header__nav--foto {
+        grid-area: 1/1/1/2;
+        display: flex;
+    }
+    [class*="header__nav--ulFlexContenedor"] {
+        grid-area: 1/2/1/6;
+        justify-self: space-around;
+        display: flex;
+    }
+    .header__nav--link {
+        display: flex;
+        color: #fff;
+        padding: 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .header__nav--ulFlexContenedor {
+        width: inherit;
+        height: inherit;
+        position: static;
+        transition: none;
+        background-color: inherit;
+    }
+    .header__nav--ulFlex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: inherit;
+    }
+    
+    .header__nav--ulFlex li a {
+        color: white;
+        display: block;
+        font-size: 1.2em;
+        text-decoration: none;
+        padding: 0rem 1rem;
+        position: static;
+    }
+
+    /* Parte del hero */
+
+    .hero__texto--titulo {
+        font-weight: 800;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #fff;
+        font-size: 40px;
+    }
+
+    .hero__texto {
+        position: relative;
+        top: 6rem;
+    }
+    
+    .heroFoto {
+        transform: scale(0.5,0.5);
+        position: relative;
+        bottom: 20rem;
+        left: 34rem;
+    }
+    /* Fin del hero y del header */
+    
+    /* En esta parte hago la adaptacion del flexbox común */
+    .servicios {
+        flex-direction: row;
+    }
+    /* Fin de adaptacion del flexbox común en servicios */
+
+    /* En esta parte adapto la sección de seguridad */
+    .seguridad__flex {
+        flex-direction: row;
+        gap: 0;
+    }
+    .seguridad__flex--columna {
+        height: 85vh;
+    }
+    .servicios__foto--contenedor {
+        flex: 0 0 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .servicios__foto--contenido {
+        height: 75%;
+        width: 75%;
+    }
+    /* Fin de adaptacion de seguridad */
+
+    /* Acá adapto al contacto */
+    main.contacto {
+        flex-direction: row;
+    }
+    iframe {
+        width: 37rem;
+    }
+    /* Fin de adaptacion de contacto */
+
+    /* Aquí adapto al footer */
+    footer {
+        flex-direction: row;
+    }
+    /* Fin de adaptacion del footer */
+
+}
